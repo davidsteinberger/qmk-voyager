@@ -52,7 +52,6 @@ MIRYOKU_LAYER_LIST
 // shift functions
 
 const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CW_TOGG, KC_CAPS);
-
 const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
     NULL
@@ -74,7 +73,25 @@ const uint16_t PROGMEM thumbcombos_sym[] = {KC_UNDS, KC_LPRN, COMBO_END};
 const uint16_t PROGMEM thumbcombos_sym[] = {KC_RPRN, KC_UNDS, COMBO_END};
   #endif
 const uint16_t PROGMEM thumbcombos_fun[] = {KC_SPC, KC_TAB, COMBO_END};
+
+const uint16_t PROGMEM rst_esc[] = {LALT_T(KC_R), LGUI_T(KC_S), LSFT_T(KC_T), COMBO_END};
+const uint16_t PROGMEM nei_enter[] = {LSFT_T(KC_N), LGUI_T(KC_E), LALT_T(KC_I), COMBO_END};
+const uint16_t PROGMEM uy_braskets_left[] = {KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM uy_braskets_right[] = {KC_Y, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM comma_dot_semicolon[] = {KC_COMM, ALGR_T(KC_DOT), COMBO_END};
+const uint16_t PROGMEM h_comma_quote[] = {KC_H, KC_COMM, COMBO_END};
+const uint16_t PROGMEM h_dot_equals[] = {KC_H, ALGR_T(KC_DOT), COMBO_END};
+
 combo_t key_combos[] = {
+
+  COMBO(rst_esc, KC_ESC),
+  COMBO(nei_enter, KC_ENT),
+  COMBO(uy_braskets_left, KC_LBRC),
+  COMBO(uy_braskets_right, KC_RBRC),
+  COMBO(comma_dot_semicolon, KC_SCLN),
+  COMBO(h_comma_quote, KC_QUOT),
+  COMBO(h_dot_equals, KC_EQL),
+
   COMBO(thumbcombos_base_right, LT(U_FUN, KC_DEL)),
   COMBO(thumbcombos_base_left, LT(U_MEDIA, KC_ESC)),
   COMBO(thumbcombos_nav, KC_DEL),
