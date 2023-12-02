@@ -52,7 +52,6 @@ MIRYOKU_LAYER_LIST
 // shift functions
 
 const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CW_TOGG, KC_CAPS);
-
 const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
     NULL
@@ -74,7 +73,39 @@ const uint16_t PROGMEM thumbcombos_sym[] = {KC_UNDS, KC_LPRN, COMBO_END};
 const uint16_t PROGMEM thumbcombos_sym[] = {KC_RPRN, KC_UNDS, COMBO_END};
   #endif
 const uint16_t PROGMEM thumbcombos_fun[] = {KC_SPC, KC_TAB, COMBO_END};
-combo_t key_combos[COMBO_COUNT] = {
+
+const uint16_t PROGMEM r_s_t[] = {LALT_T(KC_R), LGUI_T(KC_S), LSFT_T(KC_T), COMBO_END};
+const uint16_t PROGMEM n_e_i[] = {LSFT_T(KC_N), LGUI_T(KC_E), LALT_T(KC_I), COMBO_END};
+const uint16_t PROGMEM u_y[] = {KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM y_quot[] = {KC_Y, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM comm_dot[] = {KC_COMM, ALGR_T(KC_DOT), COMBO_END};
+const uint16_t PROGMEM h_comm[] = {KC_H, KC_COMM, COMBO_END};
+const uint16_t PROGMEM h_dot[] = {KC_H, ALGR_T(KC_DOT), COMBO_END};
+const uint16_t PROGMEM comm_slsh[] = {KC_COMM, LT(U_BUTTON,KC_SLSH), COMBO_END};
+const uint16_t PROGMEM h_comm_dot[] = {KC_H, KC_COMM, ALGR_T(KC_DOT), COMBO_END};
+const uint16_t PROGMEM l_u[] = {KC_L, KC_U, COMBO_END};
+const uint16_t PROGMEM j_l[] = {KC_J, KC_L, COMBO_END};
+const uint16_t PROGMEM w_f_p[] = {KC_W, KC_F, KC_P, COMBO_END};
+const uint16_t PROGMEM k_slsh[] = {KC_K, LT(U_BUTTON,KC_SLSH), COMBO_END};
+const uint16_t PROGMEM h_slsh[] = {KC_H, LT(U_BUTTON,KC_SLSH), COMBO_END};
+
+combo_t key_combos[] = {
+
+    COMBO(r_s_t, KC_ESC),
+    COMBO(n_e_i, KC_ENT),
+    COMBO(w_f_p, LGUI(KC_TAB)),
+    COMBO(comm_dot, KC_SCLN),
+    COMBO(h_comm, KC_QUOT),
+    COMBO(h_dot, KC_GT),
+    COMBO(h_comm_dot, KC_EQL),
+    COMBO(comm_slsh, KC_LT),
+    COMBO(l_u, KC_LBRC),
+    COMBO(u_y, KC_RBRC),
+    COMBO(j_l, KC_LPRN),
+    COMBO(y_quot, KC_RPRN),
+    // COMBO(k_slsh, KC_LPRN),
+    // COMBO(h_slsh, KC_RPRN),
+
   COMBO(thumbcombos_base_right, LT(U_FUN, KC_DEL)),
   COMBO(thumbcombos_base_left, LT(U_MEDIA, KC_ESC)),
   COMBO(thumbcombos_nav, KC_DEL),
