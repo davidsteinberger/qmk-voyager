@@ -5,6 +5,9 @@
 
 #pragma once
 
+#define SENTENCE_CASE_TIMEOUT 1000
+#define LEADER_NO_TIMEOUT
+
 /* #undef COMBO_COUNT */
 /* #define COMBO_COUNT 19 */
 

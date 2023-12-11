@@ -74,27 +74,37 @@ const uint16_t PROGMEM thumbcombos_sym[] = {KC_RPRN, KC_UNDS, COMBO_END};
   #endif
 const uint16_t PROGMEM thumbcombos_fun[] = {KC_SPC, KC_TAB, COMBO_END};
 
+const uint16_t PROGMEM w_f_p[] = {KC_W, KC_F, KC_P, COMBO_END};
 const uint16_t PROGMEM r_s_t[] = {LALT_T(KC_R), LGUI_T(KC_S), LSFT_T(KC_T), COMBO_END};
+const uint16_t PROGMEM x_c_d[] = {ALGR_T(KC_X), KC_C, KC_D, COMBO_END};
+const uint16_t PROGMEM l_u_y[] = {KC_L, KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM n_e_i[] = {LSFT_T(KC_N), LGUI_T(KC_E), LALT_T(KC_I), COMBO_END};
 const uint16_t PROGMEM u_y[] = {KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM y_quot[] = {KC_Y, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM comm_dot[] = {KC_COMM, ALGR_T(KC_DOT), COMBO_END};
+const uint16_t PROGMEM k_comm[] = {KC_K, KC_COMM, COMBO_END};
 const uint16_t PROGMEM h_comm[] = {KC_H, KC_COMM, COMBO_END};
 const uint16_t PROGMEM h_dot[] = {KC_H, ALGR_T(KC_DOT), COMBO_END};
 const uint16_t PROGMEM comm_slsh[] = {KC_COMM, LT(U_BUTTON,KC_SLSH), COMBO_END};
 const uint16_t PROGMEM h_comm_dot[] = {KC_H, KC_COMM, ALGR_T(KC_DOT), COMBO_END};
 const uint16_t PROGMEM l_u[] = {KC_L, KC_U, COMBO_END};
 const uint16_t PROGMEM j_l[] = {KC_J, KC_L, COMBO_END};
-const uint16_t PROGMEM w_f_p[] = {KC_W, KC_F, KC_P, COMBO_END};
 const uint16_t PROGMEM k_slsh[] = {KC_K, LT(U_BUTTON,KC_SLSH), COMBO_END};
 const uint16_t PROGMEM h_slsh[] = {KC_H, LT(U_BUTTON,KC_SLSH), COMBO_END};
+const uint16_t PROGMEM z_x[] = {LT(U_BUTTON,KC_Z), ALGR_T(KC_X), COMBO_END};
+const uint16_t PROGMEM z_x_c[] = {LT(U_BUTTON,KC_Z), ALGR_T(KC_X), KC_C, COMBO_END};
+
 
 combo_t key_combos[] = {
 
+    COMBO(w_f_p, ALT_TAB),
     COMBO(r_s_t, KC_ESC),
+    COMBO(x_c_d, KC_SPC),
+    COMBO(z_x, QK_LEAD),
+    COMBO(z_x_c, AC_TOGG),
     COMBO(n_e_i, KC_ENT),
-    COMBO(w_f_p, LGUI(KC_TAB)),
     COMBO(comm_dot, KC_SCLN),
+    COMBO(k_comm, KC_GRV),
     COMBO(h_comm, KC_QUOT),
     COMBO(h_dot, KC_GT),
     COMBO(h_comm_dot, KC_EQL),
@@ -103,8 +113,6 @@ combo_t key_combos[] = {
     COMBO(u_y, KC_RBRC),
     COMBO(j_l, KC_LPRN),
     COMBO(y_quot, KC_RPRN),
-    // COMBO(k_slsh, KC_LPRN),
-    // COMBO(h_slsh, KC_RPRN),
 
   COMBO(thumbcombos_base_right, LT(U_FUN, KC_DEL)),
   COMBO(thumbcombos_base_left, LT(U_MEDIA, KC_ESC)),
