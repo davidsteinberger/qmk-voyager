@@ -7,3 +7,4 @@ MIRYOKU_CLIPBOARD=MAC
 LEADER_ENABLE = yes
 AUTOCORRECT_ENABLE = yes
 SRC += features/sentence_case.c
+SRC += features/select_word.c

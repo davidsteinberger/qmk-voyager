@@ -7,6 +7,7 @@
 
 #define SENTENCE_CASE_TIMEOUT 1000
 #define LEADER_NO_TIMEOUT
+#define MAC_HOTKEYS
 
 /* #undef COMBO_COUNT */
 /* #define COMBO_COUNT 19 */

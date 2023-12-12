@@ -6,17 +6,20 @@
 #include QMK_KEYBOARD_H
 
 #include "features/sentence_case.h"
+#include "features/select_word.h"
 
 bool is_alt_tab_active = false; // ADD this near the beginning of keymap.c
 uint16_t alt_tab_timer = 0;     // we will be using them soon.
 
 enum custom_keycodes {          // Make sure have the awesome keycode ready
   ALT_TAB = SAFE_RANGE,
-    NEXTSEN
+    NEXTSEN,
+    SELWORD
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_sentence_case(keycode, record)) { return false; }
+    if (!process_select_word(keycode, record, SELWORD)) { return false; }
   switch (keycode) { // This will do most of the grunt work with the keycodes.
     case ALT_TAB:
       if (record->event.pressed) {
@@ -49,7 +52,7 @@ void leader_start_user(void) {
 }
 
 void leader_end_user(void) {
-    if (leader_sequence_two_keys(KC_D, KC_S)) {
+    if (leader_sequence_two_keys(KC_I, KC_P)) {
         SEND_STRING("David Steinberger");
     } else if (leader_sequence_two_keys(KC_E, KC_P)) {
         SEND_STRING("mail.steinberger@gmail.com");

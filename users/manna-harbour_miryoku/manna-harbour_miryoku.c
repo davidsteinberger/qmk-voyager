@@ -81,6 +81,7 @@ const uint16_t PROGMEM l_u_y[] = {KC_L, KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM n_e_i[] = {LSFT_T(KC_N), LGUI_T(KC_E), LALT_T(KC_I), COMBO_END};
 const uint16_t PROGMEM u_y[] = {KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM y_quot[] = {KC_Y, KC_QUOT, COMBO_END};
+// const uint16_t PROGMEM d_spc[] = {KC_D, LT(U_NAV,KC_SPC), COMBO_END};
 const uint16_t PROGMEM comm_dot[] = {KC_COMM, ALGR_T(KC_DOT), COMBO_END};
 const uint16_t PROGMEM k_comm[] = {KC_K, KC_COMM, COMBO_END};
 const uint16_t PROGMEM h_comm[] = {KC_H, KC_COMM, COMBO_END};
@@ -100,6 +101,8 @@ combo_t key_combos[] = {
     COMBO(w_f_p, ALT_TAB),
     COMBO(r_s_t, KC_ESC),
     COMBO(x_c_d, KC_SPC),
+    COMBO(l_u_y, SELWORD),
+    // COMBO(d_spc, KC_ESC),
     COMBO(z_x, QK_LEAD),
     COMBO(z_x_c, AC_TOGG),
     COMBO(n_e_i, KC_ENT),
