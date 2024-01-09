@@ -48,10 +48,10 @@ MIRYOKU_LAYER_LIST
 #undef MIRYOKU_X
 };
 
-const key_override_t a_esc_override = ko_make_basic(MOD_MASK_ALT, KC_ESC, KC_SCLN);
 
 // shift functions
 
+const key_override_t a_esc_override = ko_make_basic(MOD_MASK_ALT, KC_ESC, KC_SCLN);
 const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CW_TOGG, KC_CAPS);
 const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
@@ -79,7 +79,9 @@ const uint16_t PROGMEM thumbcombos_fun[] = {KC_SPC, KC_TAB, COMBO_END};
 const uint16_t PROGMEM w_f_p[] = {KC_W, KC_F, KC_P, COMBO_END};
 const uint16_t PROGMEM r_s_t[] = {LALT_T(KC_R), LGUI_T(KC_S), LSFT_T(KC_T), COMBO_END};
 const uint16_t PROGMEM x_c_d[] = {ALGR_T(KC_X), KC_C, KC_D, COMBO_END};
+const uint16_t PROGMEM l_u_y[] = {KC_L, KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM n_e_i[] = {LSFT_T(KC_N), LGUI_T(KC_E), LALT_T(KC_I), COMBO_END};
+const uint16_t PROGMEM q_w[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM w_f[] = {KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM f_p[] = {KC_F, KC_P, COMBO_END};
 const uint16_t PROGMEM p_b[] = {KC_P, KC_B, COMBO_END};
@@ -97,12 +99,14 @@ const uint16_t PROGMEM h_comm_dot[] = {KC_H, KC_COMM, ALGR_T(KC_DOT), COMBO_END}
 
 combo_t key_combos[] = {
 
-    COMBO(w_f_p, ALT_TAB),
-    COMBO(r_s_t, SELWORD),
-    COMBO(x_c_d, KC_SPC),
-    COMBO(n_e_i, KC_ENT),
-    COMBO(f_p, KC_MINS),
+    COMBO(w_f_p, KC_SPC),
+    // COMBO(r_s_t, KC_ENT),
+    COMBO(x_c_d, ALT_TAB),
+    COMBO(l_u_y, SELWORD),
+    // COMBO(n_e_i, KC_ESC),
+    COMBO(q_w, KC_ESC),
     COMBO(w_f, KC_LPRN),
+    COMBO(f_p, KC_MINS),
     COMBO(p_b, KC_RPRN),
     COMBO(z_x, QK_LEAD),
     COMBO(z_x_c, AC_TOGG),

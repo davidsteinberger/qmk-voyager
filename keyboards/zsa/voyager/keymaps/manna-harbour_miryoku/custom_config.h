@@ -11,8 +11,8 @@
 #define LEADER_TIMEOUT 250
 #define MAC_HOTKEYS
 
-/* #undef COMBO_COUNT */
-/* #define COMBO_COUNT 19 */
+#define MK_KINETIC_SPEED
+#define MOUSEKEY_BASE_SPEED 2000
 
 #define CAPS_LOCK_STATUS
 
