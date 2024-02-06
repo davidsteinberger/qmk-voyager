@@ -12,7 +12,8 @@
 #define MAC_HOTKEYS
 
 #define MK_KINETIC_SPEED
-#define MOUSEKEY_BASE_SPEED 2000
+#define MOUSEKEY_BASE_SPEED 1500
+#define MOUSEKEY_ACCELERATED_SPEED 2000
 
 #define CAPS_LOCK_STATUS
 
@@ -38,3 +39,8 @@ KC_ESC,            KC_4,              KC_5,              KC_6,              KC_E
 KC_GRV,            KC_1,              KC_2,              KC_3,              KC_BSLS,           U_NA,              TD(U_TD_U_NUM),    TD(U_TD_U_NAV),    KC_ALGR,           U_NA,              \
 U_NP,              U_NP,              KC_DOT,            KC_0,              KC_MINS,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
+#define MIRYOKU_LAYER_BASE \
+KC_W,              KC_L,              KC_Y,              KC_P,              KC_B,              KC_Z,              KC_F,              KC_O,              KC_U,              KC_QUOT,           \
+LCTL_T(KC_C),      LALT_T(KC_R),      LGUI_T(KC_S),      LSFT_T(KC_T),      KC_G,              KC_M,              LSFT_T(KC_N),      LGUI_T(KC_E),      LALT_T(KC_I),      LCTL_T(KC_A),      \
+LT(U_BUTTON,KC_Q), ALGR_T(KC_J),      KC_V,              KC_D,              KC_K,              KC_X,              KC_H,              KC_SLSH,           ALGR_T(KC_COMM),   LT(U_BUTTON,KC_DOT),\
+U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_SPC),  LT(U_MOUSE,KC_TAB),LT(U_SYM,KC_ENT),  LT(U_NUM,KC_BSPC), LT(U_FUN,KC_DEL),  U_NP,              U_NP

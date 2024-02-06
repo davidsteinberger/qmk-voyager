@@ -51,11 +51,13 @@ MIRYOKU_LAYER_LIST
 
 // shift functions
 
-const key_override_t a_esc_override = ko_make_basic(MOD_MASK_ALT, KC_ESC, KC_SCLN);
 const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CW_TOGG, KC_CAPS);
+const key_override_t a_esc_override = ko_make_basic(MOD_MASK_ALT, KC_ESC, KC_SCLN);
+const key_override_t a_quot_override = ko_make_basic(MOD_MASK_ALT, KC_QUOT, KC_GRV);
 const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
     &a_esc_override,
+    &a_quot_override,
     NULL
 };
 
@@ -76,48 +78,30 @@ const uint16_t PROGMEM thumbcombos_sym[] = {KC_RPRN, KC_UNDS, COMBO_END};
   #endif
 const uint16_t PROGMEM thumbcombos_fun[] = {KC_SPC, KC_TAB, COMBO_END};
 
-const uint16_t PROGMEM w_f_p[] = {KC_W, KC_F, KC_P, COMBO_END};
-const uint16_t PROGMEM r_s_t[] = {LALT_T(KC_R), LGUI_T(KC_S), LSFT_T(KC_T), COMBO_END};
-const uint16_t PROGMEM x_c_d[] = {ALGR_T(KC_X), KC_C, KC_D, COMBO_END};
-const uint16_t PROGMEM l_u_y[] = {KC_L, KC_U, KC_Y, COMBO_END};
-const uint16_t PROGMEM n_e_i[] = {LSFT_T(KC_N), LGUI_T(KC_E), LALT_T(KC_I), COMBO_END};
-const uint16_t PROGMEM q_w[] = {KC_Q, KC_W, COMBO_END};
-const uint16_t PROGMEM w_f[] = {KC_W, KC_F, COMBO_END};
-const uint16_t PROGMEM f_p[] = {KC_F, KC_P, COMBO_END};
-const uint16_t PROGMEM p_b[] = {KC_P, KC_B, COMBO_END};
-const uint16_t PROGMEM z_x[] = {LT(U_BUTTON,KC_Z), ALGR_T(KC_X), COMBO_END};
-const uint16_t PROGMEM z_x_c[] = {LT(U_BUTTON,KC_Z), ALGR_T(KC_X), KC_C, COMBO_END};
-const uint16_t PROGMEM j_l[] = {KC_J, KC_L, COMBO_END};
-const uint16_t PROGMEM u_y[] = {KC_U, KC_Y, COMBO_END};
-const uint16_t PROGMEM k_h[] = {KC_K, KC_H, COMBO_END};
-const uint16_t PROGMEM h_comm[] = {KC_H, KC_COMM, COMBO_END};
-const uint16_t PROGMEM h_dot[] = {KC_H, ALGR_T(KC_DOT), COMBO_END};
-const uint16_t PROGMEM comm_dot[] = {KC_COMM, ALGR_T(KC_DOT), COMBO_END};
-const uint16_t PROGMEM comm_slsh[] = {KC_COMM, LT(U_BUTTON,KC_SLSH), COMBO_END};
-const uint16_t PROGMEM h_comm_dot[] = {KC_H, KC_COMM, ALGR_T(KC_DOT), COMBO_END};
-
+const uint16_t PROGMEM l_y_p[] = {KC_L, KC_Y, KC_P, COMBO_END};
+const uint16_t PROGMEM q_j[] = {LT(U_BUTTON,KC_Q), ALGR_T(KC_J), COMBO_END};
+const uint16_t PROGMEM q_j_v[] = {LT(U_BUTTON,KC_Q), ALGR_T(KC_J), KC_V, COMBO_END};
+const uint16_t PROGMEM j_v_d[] = {ALGR_T(KC_J), KC_V, KC_D, COMBO_END};
+const uint16_t PROGMEM j_v[] = {ALGR_T(KC_J), KC_V, COMBO_END};
+const uint16_t PROGMEM x_h[] = {KC_X, KC_H, COMBO_END};
+const uint16_t PROGMEM h_slsh[] = {KC_H, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM h_comm[] = {KC_H, ALGR_T(KC_COMM), COMBO_END};
+const uint16_t PROGMEM h_dot[] = {KC_H, LT(U_BUTTON,KC_DOT), COMBO_END};
+const uint16_t PROGMEM slsh_comm[] = {KC_SLSH, ALGR_T(KC_COMM), COMBO_END};
+const uint16_t PROGMEM comm_dot[] = {ALGR_T(KC_COMM), LT(U_BUTTON,KC_DOT), COMBO_END};
 
 combo_t key_combos[] = {
-
-    COMBO(w_f_p, KC_SPC),
-    // COMBO(r_s_t, KC_ENT),
-    COMBO(x_c_d, ALT_TAB),
-    COMBO(l_u_y, SELWORD),
-    // COMBO(n_e_i, KC_ESC),
-    COMBO(q_w, KC_ESC),
-    COMBO(w_f, KC_LPRN),
-    COMBO(f_p, KC_MINS),
-    COMBO(p_b, KC_RPRN),
-    COMBO(z_x, QK_LEAD),
-    COMBO(z_x_c, AC_TOGG),
-    COMBO(j_l, KC_LBRC),
-    COMBO(u_y, KC_RBRC),
-    COMBO(k_h, KC_GRV),
-    COMBO(h_comm, KC_QUOT),
+    COMBO(l_y_p, SELWORD),
+    COMBO(q_j, QK_LEAD),
+    COMBO(q_j_v, AC_TOGG),
+    COMBO(j_v_d, ALT_TAB),
+    COMBO(j_v, KC_ESC),
+    COMBO(x_h, KC_GRV),
+    COMBO(h_slsh, KC_MINS),
+    COMBO(h_comm, KC_LT),
     COMBO(h_dot, KC_GT),
+    COMBO(slsh_comm, KC_EQL),
     COMBO(comm_dot, KC_SCLN),
-    COMBO(comm_slsh, KC_LT),
-    COMBO(h_comm_dot, KC_EQL),
 
   COMBO(thumbcombos_base_right, LT(U_FUN, KC_DEL)),
   COMBO(thumbcombos_base_left, LT(U_MEDIA, KC_ESC)),
