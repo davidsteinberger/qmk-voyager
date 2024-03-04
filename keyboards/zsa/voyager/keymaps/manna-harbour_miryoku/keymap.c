@@ -18,6 +18,7 @@ enum custom_keycodes { // Make sure have the awesome keycode ready
     NEXTSEN,
     SELWORD,
     DOT_SLASH_UPDIR,
+    MOUSE_A,
 
     BSPCIP,
     BSPCIW,
@@ -305,8 +306,8 @@ const uint16_t PROGMEM h_dot[]         = {KC_H, LT(U_BUTTON, KC_DOT), COMBO_END}
 const uint16_t PROGMEM slsh_comm[]     = {KC_SLSH, ALGR_T(KC_COMM), COMBO_END};
 const uint16_t PROGMEM comm_dot[]      = {ALGR_T(KC_COMM), LT(U_BUTTON, KC_DOT), COMBO_END};
 const uint16_t PROGMEM slsh_comm_dot[] = {KC_SLSH, ALGR_T(KC_COMM), LT(U_BUTTON, KC_DOT), COMBO_END};
+const uint16_t PROGMEM mouse_a[]       = {LT(U_MOUSE, KC_TAB), LCTL_T(KC_A), COMBO_END};
 
-// const uint16_t PROGMEM bspc_c[]  = {LT(U_NUM, KC_BSPC), LCTL_T(KC_C), COMBO_END};
 const uint16_t PROGMEM bspc_ac[] = {LT(U_NUM, KC_BSPC), LALT_T(KC_I), LCTL_T(KC_C), COMBO_END};
 const uint16_t PROGMEM bspc_ip[] = {LT(U_NAV, KC_SPC), LALT_T(KC_I), KC_P, COMBO_END};
 const uint16_t PROGMEM bspc_iw[] = {LT(U_NAV, KC_SPC), LALT_T(KC_I), KC_W, COMBO_END};
@@ -316,7 +317,6 @@ const uint16_t PROGMEM bspc_ew[] = {LT(U_NAV, KC_SPC), LGUI_T(KC_E), KC_W, COMBO
 const uint16_t PROGMEM bspc_every[]    = {LT(U_NUM, KC_BSPC), LGUI_T(KC_E), KC_V, COMBO_END};
 const uint16_t PROGMEM bspc_you[]      = {LT(U_NUM, KC_BSPC), KC_U, COMBO_END};
 const uint16_t PROGMEM bspc_and[]      = {LT(U_NAV, KC_SPC), KC_D, LCTL_T(KC_A), COMBO_END};
-const uint16_t PROGMEM bspcw_with[]    = {LT(U_NUM, KC_BSPC), KC_H, KC_W, COMBO_END};
 const uint16_t PROGMEM bspcf_for[]     = {LT(U_NUM, KC_BSPC), KC_F, COMBO_END};
 const uint16_t PROGMEM bspch_here[]    = {LT(U_NUM, KC_BSPC), KC_H, COMBO_END};
 const uint16_t PROGMEM bspct_the[]     = {LT(U_NUM, KC_BSPC), KC_H, LSFT_T(KC_T), COMBO_END};
@@ -338,58 +338,58 @@ const uint16_t PROGMEM kb_keyboard[]   = {KC_K, KC_B, COMBO_END};
 const uint16_t PROGMEM wa_what[]       = {KC_W, LSFT_T(KC_T), LCTL_T(KC_A), COMBO_END};
 
 combo_t key_combos[] = {COMBO(l_y_p, SELWORD),
-                        COMBO(q_j, QK_LEAD),
-                        COMBO(q_j_v, AC_TOGG),
-                        COMBO(j_v_d, ALT_TAB),
-                        COMBO(j_v, KC_ESC),
-                        COMBO(x_h, KC_GRV),
-                        COMBO(h_slsh, KC_MINS),
-                        COMBO(h_comm, KC_LT),
-                        COMBO(h_dot, KC_GT),
-                        COMBO(slsh_comm, KC_EQL),
-                        COMBO(comm_dot, KC_SCLN),
-                        COMBO(bspc_ac, KC_SCLN),
-                        COMBO(slsh_comm_dot, DOT_SLASH_UPDIR),
+                                   COMBO(q_j, QK_LEAD),
+                                   COMBO(q_j_v, AC_TOGG),
+                                   COMBO(j_v_d, ALT_TAB),
+                                   COMBO(j_v, KC_ESC),
+                                   COMBO(x_h, KC_GRV),
+                                   COMBO(h_slsh, KC_MINS),
+                                   COMBO(h_comm, KC_LT),
+                                   COMBO(h_dot, KC_GT),
+                                   COMBO(slsh_comm, KC_EQL),
+                                   COMBO(comm_dot, KC_SCLN),
+                                   COMBO(bspc_ac, KC_SCLN),
+                                   COMBO(slsh_comm_dot, DOT_SLASH_UPDIR),
+                                   COMBO(mouse_a, KC_ESC),
 
-                        COMBO(bspc_ip, BSPCIP),
-                        COMBO(bspc_iw, BSPCIW),
-                        COMBO(bspc_ep, BSPCEP),
-                        COMBO(bspc_ew, BSPCEW),
+                                   COMBO(bspc_ip, BSPCIP),
+                                   COMBO(bspc_iw, BSPCIW),
+                                   COMBO(bspc_ep, BSPCEP),
+                                   COMBO(bspc_ew, BSPCEW),
 
-                        COMBO(bspc_every, BSPCEV_EVERY),
-                        COMBO(bspc_you, BSPCU_YOU),
-                        COMBO(bspc_and, BSPCA_AND),
-                        // COMBO(bspcw_with, BSPCW_WITH),
-                        COMBO(bspcf_for, BSPCF_FOR),
-                        COMBO(bspch_here, BSPCH_HERE),
-                        COMBO(bspct_the, BSPCT_THE),
-                        COMBO(bspcm_ment, BSPCM_MENT),
-                        COMBO(bspcg_ing, BSPCG_ING),
-                        COMBO(bspco_ough, BSPCO_OUGH),
-                        COMBO(bspcol_ould, BSPCOL_OULD),
-                        COMBO(bspci_ion, BSPCI_ION),
-                        COMBO(bspcis_ions, BSPCIS_IONS),
-                        COMBO(bspcta_that, BSPCTA_THAT),
-                        COMBO(bspcq_que, BSPCQ_QUE),
-                        COMBO(bspci_key, BSPCK_KEY),
-                        COMBO(bspcts_this, BSPCTS_THIS),
-                        COMBO(bspcdn_dont, BSPCDN_DONT),
-                        COMBO(bspcit_in_the, BSPCIT_IN_THE),
-                        COMBO(hv_have, HV_HAVE),
-                        COMBO(qk_qmk, QK_QMK),
-                        COMBO(kb_keyboard, KB_KEYBOARD),
-                        COMBO(wa_what, WA_WHAT),
+                                   COMBO(bspc_every, BSPCEV_EVERY),
+                                   COMBO(bspc_you, BSPCU_YOU),
+                                   COMBO(bspc_and, BSPCA_AND),
+                                   COMBO(bspcf_for, BSPCF_FOR),
+                                   COMBO(bspch_here, BSPCH_HERE),
+                                   COMBO(bspct_the, BSPCT_THE),
+                                   COMBO(bspcm_ment, BSPCM_MENT),
+                                   COMBO(bspcg_ing, BSPCG_ING),
+                                   COMBO(bspco_ough, BSPCO_OUGH),
+                                   COMBO(bspcol_ould, BSPCOL_OULD),
+                                   COMBO(bspci_ion, BSPCI_ION),
+                                   COMBO(bspcis_ions, BSPCIS_IONS),
+                                   COMBO(bspcta_that, BSPCTA_THAT),
+                                   COMBO(bspcq_que, BSPCQ_QUE),
+                                   COMBO(bspci_key, BSPCK_KEY),
+                                   COMBO(bspcts_this, BSPCTS_THIS),
+                                   COMBO(bspcdn_dont, BSPCDN_DONT),
+                                   COMBO(bspcit_in_the, BSPCIT_IN_THE),
+                                   COMBO(hv_have, HV_HAVE),
+                                   COMBO(qk_qmk, QK_QMK),
+                                   COMBO(kb_keyboard, KB_KEYBOARD),
+                                   COMBO(wa_what, WA_WHAT),
 
-                        COMBO(thumbcombos_base_right, LT(U_FUN, KC_DEL)),
-                        COMBO(thumbcombos_base_left, LT(U_MEDIA, KC_ESC)),
-                        COMBO(thumbcombos_nav, KC_DEL),
-                        COMBO(thumbcombos_mouse, KC_BTN3),
-                        COMBO(thumbcombos_media, KC_MUTE),
-                        COMBO(thumbcombos_num, KC_DOT),
+                                   COMBO(thumbcombos_base_right, LT(U_FUN, KC_DEL)),
+                                   COMBO(thumbcombos_base_left, LT(U_MEDIA, KC_ESC)),
+                                   COMBO(thumbcombos_nav, KC_DEL),
+                                   COMBO(thumbcombos_mouse, KC_BTN3),
+                                   COMBO(thumbcombos_media, KC_MUTE),
+                                   COMBO(thumbcombos_num, KC_DOT),
 #    if defined(MIRYOKU_LAYERS_FLIP)
-                        COMBO(thumbcombos_sym, KC_RPRN),
+                                   COMBO(thumbcombos_sym, KC_RPRN),
 #    else
-                        COMBO(thumbcombos_sym, KC_LPRN),
+                                   COMBO(thumbcombos_sym, KC_LPRN),
 #    endif
-                        COMBO(thumbcombos_fun, KC_APP)};
+                                   COMBO(thumbcombos_fun, KC_APP)};
 #endif
