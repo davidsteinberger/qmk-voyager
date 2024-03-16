@@ -304,8 +304,7 @@ const uint16_t PROGMEM h_slsh[]        = {KC_H, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM h_comm[]        = {KC_H, ALGR_T(KC_COMM), COMBO_END};
 const uint16_t PROGMEM h_dot[]         = {KC_H, LT(U_BUTTON, KC_DOT), COMBO_END};
 const uint16_t PROGMEM slsh_comm[]     = {KC_SLSH, ALGR_T(KC_COMM), COMBO_END};
-const uint16_t PROGMEM comm_dot[]      = {ALGR_T(KC_COMM), LT(U_BUTTON, KC_DOT), COMBO_END};
-const uint16_t PROGMEM slsh_comm_dot[] = {KC_SLSH, ALGR_T(KC_COMM), LT(U_BUTTON, KC_DOT), COMBO_END};
+const uint16_t PROGMEM h_slsh_comm[] = {KC_H, KC_SLSH, ALGR_T(KC_COMM), COMBO_END};
 const uint16_t PROGMEM mouse_a[]       = {LT(U_MOUSE, KC_TAB), LCTL_T(KC_A), COMBO_END};
 
 const uint16_t PROGMEM bspc_ac[] = {LT(U_NUM, KC_BSPC), LALT_T(KC_I), LCTL_T(KC_C), COMBO_END};
@@ -314,16 +313,16 @@ const uint16_t PROGMEM bspc_iw[] = {LT(U_NAV, KC_SPC), LALT_T(KC_I), KC_W, COMBO
 const uint16_t PROGMEM bspc_ep[] = {LT(U_NAV, KC_SPC), LGUI_T(KC_E), KC_P, COMBO_END};
 const uint16_t PROGMEM bspc_ew[] = {LT(U_NAV, KC_SPC), LGUI_T(KC_E), KC_W, COMBO_END};
 
-const uint16_t PROGMEM bspc_every[]    = {LT(U_NUM, KC_BSPC), LGUI_T(KC_E), KC_V, COMBO_END};
-const uint16_t PROGMEM bspc_you[]      = {LT(U_NUM, KC_BSPC), KC_U, COMBO_END};
+const uint16_t PROGMEM bspc_every[]    = {LT(U_NAV, KC_SPC), LGUI_T(KC_E), KC_V, COMBO_END};
+const uint16_t PROGMEM bspc_you[]      = {LT(U_NAV, KC_SPC), KC_D, KC_U, COMBO_END};
 const uint16_t PROGMEM bspc_and[]      = {LT(U_NAV, KC_SPC), KC_D, LCTL_T(KC_A), COMBO_END};
-const uint16_t PROGMEM bspcf_for[]     = {LT(U_NUM, KC_BSPC), KC_F, COMBO_END};
+const uint16_t PROGMEM bspcf_for[]     = {LT(U_NAV, KC_SPC), KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM bspch_here[]    = {LT(U_NUM, KC_BSPC), KC_H, COMBO_END};
 const uint16_t PROGMEM bspct_the[]     = {LT(U_NUM, KC_BSPC), KC_H, LSFT_T(KC_T), COMBO_END};
 const uint16_t PROGMEM bspcm_ment[]    = {LT(U_NUM, KC_BSPC), KC_M, COMBO_END};
 const uint16_t PROGMEM bspcg_ing[]     = {LT(U_NUM, KC_BSPC), KC_H, KC_G, COMBO_END};
-const uint16_t PROGMEM bspco_ough[]    = {LT(U_NUM, KC_BSPC), KC_O, COMBO_END};
-const uint16_t PROGMEM bspcol_ould[]   = {LT(U_NUM, KC_BSPC), KC_O, KC_L, COMBO_END};
+const uint16_t PROGMEM bspco_ough[]    = {LT(U_NAV, KC_SPC), KC_D, KC_O, COMBO_END};
+const uint16_t PROGMEM bspcol_ould[]   = {LT(U_NAV, KC_SPC), KC_O, KC_L, COMBO_END};
 const uint16_t PROGMEM bspci_ion[]     = {LT(U_NAV, KC_SPC), KC_D, LALT_T(KC_I), COMBO_END};
 const uint16_t PROGMEM bspcis_ions[]   = {LT(U_NAV, KC_SPC), KC_D, LALT_T(KC_I), LGUI_T(KC_S), COMBO_END};
 const uint16_t PROGMEM bspcta_that[]   = {LT(U_NUM, KC_BSPC), LSFT_T(KC_T), LCTL_T(KC_A), COMBO_END};
@@ -347,9 +346,8 @@ combo_t key_combos[] = {COMBO(l_y_p, SELWORD),
                                    COMBO(h_comm, KC_LT),
                                    COMBO(h_dot, KC_GT),
                                    COMBO(slsh_comm, KC_EQL),
-                                   COMBO(comm_dot, KC_SCLN),
                                    COMBO(bspc_ac, KC_SCLN),
-                                   COMBO(slsh_comm_dot, DOT_SLASH_UPDIR),
+                                   COMBO(h_slsh_comm, DOT_SLASH_UPDIR),
                                    COMBO(mouse_a, KC_ESC),
 
                                    COMBO(bspc_ip, BSPCIP),
