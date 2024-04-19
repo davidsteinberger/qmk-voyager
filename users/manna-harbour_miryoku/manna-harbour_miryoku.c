@@ -48,6 +48,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // shift functions
 
 const key_override_t   capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CW_TOGG, KC_CAPS);
-const key_override_t   a_esc_override        = ko_make_basic(MOD_MASK_ALT, KC_ESC, KC_SCLN);
-const key_override_t   a_quot_override       = ko_make_basic(MOD_MASK_ALT, KC_QUOT, KC_GRV);
-const key_override_t **key_overrides         = (const key_override_t *[]){&capsword_key_override, &a_esc_override, &a_quot_override, NULL};
+const key_override_t **key_overrides         = (const key_override_t *[]){&capsword_key_override, NULL};
