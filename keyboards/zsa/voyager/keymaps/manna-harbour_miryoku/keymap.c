@@ -38,6 +38,7 @@ enum custom_keycodes { // Make sure have the awesome keycode ready
     BSPCG_ING,
     BSPCO_OUGH,
     BSPCOL_OULD,
+    BSPCI,
     BSPCI_ION,
     BSPCIS_IONS,
     BSPCTA_THAT,
@@ -138,117 +139,122 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             break;
         case BSPCEV_EVERY:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("every");
             }
             break;
         case BSPCU_YOU:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("you");
             }
             break;
         case BSPCA_AND:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("and");
             }
             break;
         case BSPCW_WITH:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("with");
             }
             break;
         case BSPCF_FOR:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("for");
             }
             break;
         case BSPCH_HERE:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("here");
             }
             break;
         case BSPCT_THE:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("the");
             }
             break;
         case BSPCM_MENT:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("ment");
             }
             break;
         case BSPCG_ING:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("ing");
             }
             break;
         case BSPCO_OUGH:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("ough");
             }
             break;
         case BSPCOL_OULD:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("ould");
             }
             break;
+        case BSPCI:
+            if (record->event.pressed) {
+                SEND_STRING("I");
+            }
+            break;
         case BSPCI_ION:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("ion");
             }
             break;
         case BSPCIS_IONS:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("ions");
             }
             break;
         case BSPCTA_THAT:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("that");
             }
             break;
         case BSPCQ_QUE:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("que");
             }
             break;
         case BSPCK_KEY:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("key");
             }
             break;
         case BSPCTS_THIS:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("this");
             }
             break;
         case BSPCDN_DONT:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("don't");
             }
             break;
         case BSPCIT_IN_THE:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("in the");
             }
             break;
         case HV_HAVE:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("have");
             }
             break;
         case QK_QMK:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("qmk");
             }
             break;
         case KB_KEYBOARD:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("keyboard");
             }
             break;
         case WA_WHAT:
-            if (spcdot_enabled && record->event.pressed) {
+            if (record->event.pressed) {
                 send_string_with_mods("what");
             }
             break;
@@ -334,13 +340,14 @@ const uint16_t PROGMEM bspcm_ment[]    = {LT(U_NUM, KC_BSPC), KC_M, COMBO_END};
 const uint16_t PROGMEM bspcg_ing[]     = {LT(U_NUM, KC_BSPC), KC_H, KC_G, COMBO_END};
 const uint16_t PROGMEM bspco_ough[]    = {LT(U_NAV, KC_SPC), KC_D, KC_O, COMBO_END};
 const uint16_t PROGMEM bspcol_ould[]   = {LT(U_NAV, KC_SPC), KC_O, KC_L, COMBO_END};
+const uint16_t PROGMEM bspci[]         = {LT(U_NUM, KC_BSPC), LALT_T(KC_I), COMBO_END};
 const uint16_t PROGMEM bspci_ion[]     = {LT(U_NAV, KC_SPC), KC_D, LALT_T(KC_I), COMBO_END};
 const uint16_t PROGMEM bspcis_ions[]   = {LT(U_NAV, KC_SPC), KC_D, LALT_T(KC_I), LGUI_T(KC_S), COMBO_END};
 const uint16_t PROGMEM bspcta_that[]   = {LT(U_NUM, KC_BSPC), LSFT_T(KC_T), LCTL_T(KC_A), COMBO_END};
 const uint16_t PROGMEM bspcq_que[]     = {LT(U_NUM, KC_BSPC), LT(U_BUTTON, KC_Q), KC_H, COMBO_END};
 const uint16_t PROGMEM bspci_key[]     = {LT(U_NUM, KC_BSPC), KC_H, KC_K, COMBO_END};
 const uint16_t PROGMEM bspcts_this[]   = {LT(U_NUM, KC_BSPC), KC_H, LSFT_T(KC_T), LGUI_T(KC_S), COMBO_END};
-const uint16_t PROGMEM bspcdn_dont[]   = {LT(U_NUM, KC_BSPC), KC_D, LSFT_T(KC_N), COMBO_END};
+const uint16_t PROGMEM bspcdn_dont[]   = {LT(U_NUM, KC_BSPC), KC_H, KC_D, COMBO_END};
 const uint16_t PROGMEM bspcit_in_the[] = {LT(U_NUM, KC_BSPC), LALT_T(KC_I), LSFT_T(KC_T), COMBO_END};
 const uint16_t PROGMEM hv_have[]       = {KC_H, KC_V, COMBO_END};
 const uint16_t PROGMEM qk_qmk[]        = {LT(U_BUTTON, KC_Q), KC_K, COMBO_END};
@@ -376,6 +383,7 @@ combo_t key_combos[] = {COMBO(l_y_p, SELWORD),
                         COMBO(bspcg_ing, BSPCG_ING),
                         COMBO(bspco_ough, BSPCO_OUGH),
                         COMBO(bspcol_ould, BSPCOL_OULD),
+                        COMBO(bspci, BSPCI),
                         COMBO(bspci_ion, BSPCI_ION),
                         COMBO(bspcis_ions, BSPCIS_IONS),
                         COMBO(bspcta_that, BSPCTA_THAT),
