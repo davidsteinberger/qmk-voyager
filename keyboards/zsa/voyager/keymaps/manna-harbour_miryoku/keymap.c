@@ -37,12 +37,10 @@ enum custom_keycodes { // Make sure have the awesome keycode ready
     BSPCM_MENT,
     BSPCG_ING,
     BSPCO_OUGH,
-    BSPCOL_OULD,
     BSPCI,
     BSPCI_ION,
-    BSPCIS_IONS,
     BSPCTA_THAT,
-    BSPCQ_QUE,
+    BSPCQ_QUI,
     // I use the word "key" much more frequently than the common folk
     // and if you're reading this, you probably do too
     BSPCK_KEY,
@@ -188,11 +186,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 send_string_with_mods("ough");
             }
             break;
-        case BSPCOL_OULD:
-            if (record->event.pressed) {
-                send_string_with_mods("ould");
-            }
-            break;
         case BSPCI:
             if (record->event.pressed) {
                 SEND_STRING("I");
@@ -203,19 +196,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 send_string_with_mods("ion");
             }
             break;
-        case BSPCIS_IONS:
-            if (record->event.pressed) {
-                send_string_with_mods("ions");
-            }
-            break;
         case BSPCTA_THAT:
             if (record->event.pressed) {
                 send_string_with_mods("that");
             }
             break;
-        case BSPCQ_QUE:
+        case BSPCQ_QUI:
             if (record->event.pressed) {
-                send_string_with_mods("que");
+                send_string_with_mods("qui");
             }
             break;
         case BSPCK_KEY:
@@ -312,6 +300,7 @@ const uint16_t PROGMEM thumbcombos_sym[] = {KC_RPRN, KC_UNDS, COMBO_END};
 const uint16_t PROGMEM thumbcombos_fun[] = {KC_SPC, KC_TAB, COMBO_END};
 
 const uint16_t PROGMEM l_y_p[]       = {KC_L, KC_Y, KC_P, COMBO_END};
+const uint16_t PROGMEM r_s_t[]       = {LALT_T(KC_R), LGUI_T(KC_S), LSFT_T(KC_T), COMBO_END};
 const uint16_t PROGMEM q_j[]         = {LT(U_BUTTON, KC_Q), ALGR_T(KC_J), COMBO_END};
 const uint16_t PROGMEM q_j_v[]       = {LT(U_BUTTON, KC_Q), ALGR_T(KC_J), KC_V, COMBO_END};
 const uint16_t PROGMEM j_v_d[]       = {ALGR_T(KC_J), KC_V, KC_D, COMBO_END};
@@ -322,6 +311,7 @@ const uint16_t PROGMEM h_comm[]      = {KC_H, ALGR_T(KC_COMM), COMBO_END};
 const uint16_t PROGMEM h_dot[]       = {KC_H, LT(U_BUTTON, KC_DOT), COMBO_END};
 const uint16_t PROGMEM slsh_comm[]   = {KC_SLSH, ALGR_T(KC_COMM), COMBO_END};
 const uint16_t PROGMEM h_slsh_comm[] = {KC_H, KC_SLSH, ALGR_T(KC_COMM), COMBO_END};
+const uint16_t PROGMEM comm_dot[]    = {ALGR_T(KC_COMM), LT(U_BUTTON, KC_DOT), COMBO_END};
 const uint16_t PROGMEM mouse_a[]     = {LT(U_MOUSE, KC_TAB), LCTL_T(KC_A), COMBO_END};
 
 const uint16_t PROGMEM bspc_ac[] = {LT(U_NUM, KC_BSPC), LALT_T(KC_I), LCTL_T(KC_C), COMBO_END};
@@ -337,14 +327,14 @@ const uint16_t PROGMEM bspcf_for[]     = {LT(U_NAV, KC_SPC), KC_D, KC_F, COMBO_E
 const uint16_t PROGMEM bspch_here[]    = {LT(U_NUM, KC_BSPC), KC_H, COMBO_END};
 const uint16_t PROGMEM bspct_the[]     = {LT(U_NUM, KC_BSPC), KC_H, LSFT_T(KC_T), COMBO_END};
 const uint16_t PROGMEM bspcm_ment[]    = {LT(U_NUM, KC_BSPC), KC_M, COMBO_END};
-const uint16_t PROGMEM bspcg_ing[]     = {LT(U_NUM, KC_BSPC), KC_H, KC_G, COMBO_END};
-const uint16_t PROGMEM bspco_ough[]    = {LT(U_NAV, KC_SPC), KC_D, KC_O, COMBO_END};
-const uint16_t PROGMEM bspcol_ould[]   = {LT(U_NAV, KC_SPC), KC_O, KC_L, COMBO_END};
-const uint16_t PROGMEM bspci[]         = {LT(U_NUM, KC_BSPC), LALT_T(KC_I), COMBO_END};
-const uint16_t PROGMEM bspci_ion[]     = {LT(U_NAV, KC_SPC), KC_D, LALT_T(KC_I), COMBO_END};
-const uint16_t PROGMEM bspcis_ions[]   = {LT(U_NAV, KC_SPC), KC_D, LALT_T(KC_I), LGUI_T(KC_S), COMBO_END};
+const uint16_t PROGMEM bspcg_ing[]     = {KC_G, LSFT_T(KC_N), LALT_T(KC_I), COMBO_END};
+const uint16_t PROGMEM bspco_ough[]    = {LT(U_NUM, KC_BSPC), KC_O, COMBO_END};
+// const uint16_t PROGMEM bspcol_ould[]   = {LT(U_NAV, KC_SPC), KC_O, KC_L, COMBO_END};
+const uint16_t PROGMEM bspci[]         = {LT(U_NAV, KC_SPC), KC_D, LALT_T(KC_I), COMBO_END};
+const uint16_t PROGMEM bspci_ion[]     = {LT(U_NUM, KC_BSPC), ALGR_T(KC_COMM), COMBO_END};
+// const uint16_t PROGMEM bspcis_ions[]   = {LT(U_NAV, KC_SPC), KC_D, LALT_T(KC_I), LGUI_T(KC_S), COMBO_END};
 const uint16_t PROGMEM bspcta_that[]   = {LT(U_NUM, KC_BSPC), LSFT_T(KC_T), LCTL_T(KC_A), COMBO_END};
-const uint16_t PROGMEM bspcq_que[]     = {LT(U_NUM, KC_BSPC), LT(U_BUTTON, KC_Q), KC_H, COMBO_END};
+const uint16_t PROGMEM bspcq_qui[]     = {LT(U_NUM, KC_BSPC), LT(U_BUTTON, KC_Q), KC_H, COMBO_END};
 const uint16_t PROGMEM bspci_key[]     = {LT(U_NUM, KC_BSPC), KC_H, KC_K, COMBO_END};
 const uint16_t PROGMEM bspcts_this[]   = {LT(U_NUM, KC_BSPC), KC_H, LSFT_T(KC_T), LGUI_T(KC_S), COMBO_END};
 const uint16_t PROGMEM bspcdn_dont[]   = {LT(U_NUM, KC_BSPC), KC_H, KC_D, COMBO_END};
@@ -359,6 +349,7 @@ combo_t key_combos[] = {COMBO(l_y_p, SELWORD),
                         COMBO(q_j_v, AC_TOGG),
                         COMBO(j_v_d, ALT_TAB),
                         COMBO(j_v, KC_ESC),
+                        COMBO(r_s_t, KC_ENT),
                         COMBO(x_h, TRIPPLE_GRAVE),
                         COMBO(h_slsh, KC_MINS),
                         COMBO(h_comm, KC_LT),
@@ -366,6 +357,7 @@ combo_t key_combos[] = {COMBO(l_y_p, SELWORD),
                         COMBO(slsh_comm, KC_EQL),
                         COMBO(bspc_ac, KC_SCLN),
                         COMBO(h_slsh_comm, DOT_SLASH_UPDIR),
+                        COMBO(comm_dot, KC_SCLN),
                         COMBO(mouse_a, KC_ESC),
 
                         COMBO(bspc_ip, BSPCIP),
@@ -382,12 +374,12 @@ combo_t key_combos[] = {COMBO(l_y_p, SELWORD),
                         COMBO(bspcm_ment, BSPCM_MENT),
                         COMBO(bspcg_ing, BSPCG_ING),
                         COMBO(bspco_ough, BSPCO_OUGH),
-                        COMBO(bspcol_ould, BSPCOL_OULD),
+                        // COMBO(bspcol_ould, BSPCOL_OULD),
                         COMBO(bspci, BSPCI),
                         COMBO(bspci_ion, BSPCI_ION),
-                        COMBO(bspcis_ions, BSPCIS_IONS),
+                        // COMBO(bspcis_ions, BSPCIS_IONS),
                         COMBO(bspcta_that, BSPCTA_THAT),
-                        COMBO(bspcq_que, BSPCQ_QUE),
+                        COMBO(bspcq_qui, BSPCQ_QUI),
                         COMBO(bspci_key, BSPCK_KEY),
                         COMBO(bspcts_this, BSPCTS_THIS),
                         COMBO(bspcdn_dont, BSPCDN_DONT),
