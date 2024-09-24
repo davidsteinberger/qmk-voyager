@@ -284,6 +284,24 @@ void leader_end_user(void) {
     }
 }
 
+// shift functions
+const key_override_t   capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CW_TOGG, KC_CAPS);
+const key_override_t   apos_under_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_QUOT, KC_UNDS, 1 << U_BASE);
+const key_override_t   comma_qmark_override = ko_make_with_layers(MOD_MASK_SHIFT, RSFT_T(KC_COMM), KC_QUES, 1 << U_BASE);
+const key_override_t   dot_gt_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_DOT, KC_GT, 1 << U_BASE);
+const key_override_t   minus_dqt_override = ko_make_with_layers(MOD_MASK_SHIFT, ALGR_T(KC_MINS), KC_DQT, 1 << U_BASE);
+const key_override_t   slash_lt_override = ko_make_with_layers(MOD_MASK_SHIFT, LT(U_BUTTON,KC_SLSH), KC_LT, 1 << U_BASE);
+const key_override_t **key_overrides         = (const key_override_t *[]){
+    &capsword_key_override,
+    &apos_under_override,
+    &comma_qmark_override,
+    &dot_gt_override,
+    &minus_dqt_override,
+    &slash_lt_override,
+    NULL
+};
+
+
 // thumb combos
 #if defined(MIRYOKU_KLUDGE_THUMBCOMBOS)
 const uint16_t PROGMEM thumbcombos_base_right[] = {LT(U_SYM, KC_ENT), LT(U_NUM, KC_BSPC), COMBO_END};
@@ -299,65 +317,68 @@ const uint16_t PROGMEM thumbcombos_sym[] = {KC_RPRN, KC_UNDS, COMBO_END};
 #    endif
 const uint16_t PROGMEM thumbcombos_fun[] = {KC_SPC, KC_TAB, COMBO_END};
 
-const uint16_t PROGMEM l_y_p[]       = {KC_L, KC_Y, KC_P, COMBO_END};
-const uint16_t PROGMEM r_s_t[]       = {LALT_T(KC_R), LGUI_T(KC_S), LSFT_T(KC_T), COMBO_END};
-const uint16_t PROGMEM q_j[]         = {LT(U_BUTTON, KC_Q), ALGR_T(KC_J), COMBO_END};
-const uint16_t PROGMEM q_j_v[]       = {LT(U_BUTTON, KC_Q), ALGR_T(KC_J), KC_V, COMBO_END};
-const uint16_t PROGMEM j_v_d[]       = {ALGR_T(KC_J), KC_V, KC_D, COMBO_END};
-const uint16_t PROGMEM j_v[]         = {ALGR_T(KC_J), KC_V, COMBO_END};
-const uint16_t PROGMEM x_h[]         = {KC_X, KC_H, COMBO_END};
-const uint16_t PROGMEM h_slsh[]      = {KC_H, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM h_comm[]      = {KC_H, ALGR_T(KC_COMM), COMBO_END};
-const uint16_t PROGMEM h_dot[]       = {KC_H, LT(U_BUTTON, KC_DOT), COMBO_END};
-const uint16_t PROGMEM slsh_comm[]   = {KC_SLSH, ALGR_T(KC_COMM), COMBO_END};
-const uint16_t PROGMEM h_slsh_comm[] = {KC_H, KC_SLSH, ALGR_T(KC_COMM), COMBO_END};
-const uint16_t PROGMEM comm_dot[]    = {ALGR_T(KC_COMM), LT(U_BUTTON, KC_DOT), COMBO_END};
-const uint16_t PROGMEM mouse_a[]     = {LT(U_MOUSE, KC_TAB), LCTL_T(KC_A), COMBO_END};
+const uint16_t PROGMEM l_d_w[]       = {KC_L, KC_D, KC_W, COMBO_END};
+const uint16_t PROGMEM r_t_s[]       = {LALT_T(KC_R), LGUI_T(KC_T), LSFT_T(KC_S), COMBO_END};
+const uint16_t PROGMEM q_x[]         = {LT(U_BUTTON, KC_Q), ALGR_T(KC_X), COMBO_END};
+const uint16_t PROGMEM q_x_m[]       = {LT(U_BUTTON, KC_Q), ALGR_T(KC_X), KC_M, COMBO_END};
+const uint16_t PROGMEM x_m_c[]       = {ALGR_T(KC_X), KC_M, KC_C, COMBO_END};
+const uint16_t PROGMEM x_m[]         = {ALGR_T(KC_X), KC_M, COMBO_END};
+const uint16_t PROGMEM k_p[]         = {KC_K, KC_P, COMBO_END};
+const uint16_t PROGMEM p_dot[]       = {KC_P, KC_DOT, COMBO_END};
+const uint16_t PROGMEM p_mins[]      = {KC_P, ALGR_T(KC_MINS), COMBO_END};
+const uint16_t PROGMEM p_slsh[]      = {KC_P, LT(U_BUTTON, KC_SLSH), COMBO_END};
+const uint16_t PROGMEM dot_mins[]    = {KC_DOT, ALGR_T(KC_MINS), COMBO_END};
+const uint16_t PROGMEM p_dot_mins[]  = {KC_P, KC_DOT, ALGR_T(KC_MINS), COMBO_END};
+// const uint16_t PROGMEM comm_dot[]    = {ALGR_T(KC_COMM), LT(U_BUTTON, KC_DOT), COMBO_END};
+const uint16_t PROGMEM mouse_a[]     = {LT(U_MOUSE, KC_TAB), LCTL_T(KC_I), COMBO_END};
 
-const uint16_t PROGMEM bspc_ac[] = {LT(U_NUM, KC_BSPC), LALT_T(KC_I), LCTL_T(KC_C), COMBO_END};
-const uint16_t PROGMEM bspc_ip[] = {LT(U_NAV, KC_SPC), LALT_T(KC_I), KC_P, COMBO_END};
-const uint16_t PROGMEM bspc_iw[] = {LT(U_NAV, KC_SPC), LALT_T(KC_I), KC_W, COMBO_END};
-const uint16_t PROGMEM bspc_ep[] = {LT(U_NAV, KC_SPC), LGUI_T(KC_E), KC_P, COMBO_END};
-const uint16_t PROGMEM bspc_ew[] = {LT(U_NAV, KC_SPC), LGUI_T(KC_E), KC_W, COMBO_END};
+// const uint16_t PROGMEM bspc_ac[] = {LT(U_NUM, KC_BSPC), LALT_T(KC_I), LCTL_T(KC_C), COMBO_END};
+const uint16_t PROGMEM bspc_ip[] = {LT(U_NAV, KC_SPC), LCTL_T(KC_I), KC_D, COMBO_END};
+const uint16_t PROGMEM bspc_iw[] = {LT(U_NAV, KC_SPC), LCTL_T(KC_I), KC_W, COMBO_END};
+const uint16_t PROGMEM bspc_ep[] = {LT(U_NAV, KC_SPC), LALT_T(KC_E), KC_D, COMBO_END};
+const uint16_t PROGMEM bspc_ew[] = {LT(U_NAV, KC_SPC), LALT_T(KC_E), KC_W, COMBO_END};
 
-const uint16_t PROGMEM bspc_every[]    = {LT(U_NAV, KC_SPC), LGUI_T(KC_E), KC_V, COMBO_END};
-const uint16_t PROGMEM bspc_you[]      = {LT(U_NAV, KC_SPC), KC_D, KC_U, COMBO_END};
-const uint16_t PROGMEM bspc_and[]      = {LT(U_NAV, KC_SPC), KC_D, LCTL_T(KC_A), COMBO_END};
-const uint16_t PROGMEM bspcf_for[]     = {LT(U_NAV, KC_SPC), KC_D, KC_F, COMBO_END};
-const uint16_t PROGMEM bspch_here[]    = {LT(U_NUM, KC_BSPC), KC_H, COMBO_END};
-const uint16_t PROGMEM bspct_the[]     = {LT(U_NUM, KC_BSPC), KC_H, LSFT_T(KC_T), COMBO_END};
-const uint16_t PROGMEM bspcm_ment[]    = {LT(U_NUM, KC_BSPC), KC_M, COMBO_END};
-const uint16_t PROGMEM bspcg_ing[]     = {KC_G, LSFT_T(KC_N), LALT_T(KC_I), COMBO_END};
-const uint16_t PROGMEM bspco_ough[]    = {LT(U_NUM, KC_BSPC), KC_O, COMBO_END};
-// const uint16_t PROGMEM bspcol_ould[]   = {LT(U_NAV, KC_SPC), KC_O, KC_L, COMBO_END};
-const uint16_t PROGMEM bspci[]         = {LT(U_NAV, KC_SPC), KC_D, LALT_T(KC_I), COMBO_END};
-const uint16_t PROGMEM bspci_ion[]     = {LT(U_NUM, KC_BSPC), ALGR_T(KC_COMM), COMBO_END};
-// const uint16_t PROGMEM bspcis_ions[]   = {LT(U_NAV, KC_SPC), KC_D, LALT_T(KC_I), LGUI_T(KC_S), COMBO_END};
-const uint16_t PROGMEM bspcta_that[]   = {LT(U_NUM, KC_BSPC), LSFT_T(KC_T), LCTL_T(KC_A), COMBO_END};
-const uint16_t PROGMEM bspcq_qui[]     = {LT(U_NUM, KC_BSPC), LT(U_BUTTON, KC_Q), KC_H, COMBO_END};
-const uint16_t PROGMEM bspci_key[]     = {LT(U_NUM, KC_BSPC), KC_H, KC_K, COMBO_END};
-const uint16_t PROGMEM bspcts_this[]   = {LT(U_NUM, KC_BSPC), KC_H, LSFT_T(KC_T), LGUI_T(KC_S), COMBO_END};
-const uint16_t PROGMEM bspcdn_dont[]   = {LT(U_NUM, KC_BSPC), KC_H, KC_D, COMBO_END};
-const uint16_t PROGMEM bspcit_in_the[] = {LT(U_NUM, KC_BSPC), LALT_T(KC_I), LSFT_T(KC_T), COMBO_END};
-const uint16_t PROGMEM hv_have[]       = {KC_H, KC_V, COMBO_END};
-const uint16_t PROGMEM qk_qmk[]        = {LT(U_BUTTON, KC_Q), KC_K, COMBO_END};
-const uint16_t PROGMEM kb_keyboard[]   = {KC_K, KC_B, COMBO_END};
-const uint16_t PROGMEM wa_what[]       = {KC_W, LSFT_T(KC_T), LCTL_T(KC_A), COMBO_END};
+// ZMK_COMBO(cv_comma_qmark, &comma_qmark, LB1 LB2, U_BASE)
+const uint16_t PROGMEM mc_comma[] = {KC_M, KC_C, COMBO_END};
+// ZMK_COMBO(pdot_comma_qmark, &comma_qmark, RB1 RB2, U_BASE)
+const uint16_t PROGMEM pdot_comma[] = {KC_P, KC_DOT, COMBO_END};
 
-combo_t key_combos[] = {COMBO(l_y_p, SELWORD),
-                        COMBO(q_j, QK_LEAD),
-                        COMBO(q_j_v, AC_TOGG),
-                        COMBO(j_v_d, ALT_TAB),
-                        COMBO(j_v, KC_ESC),
-                        COMBO(r_s_t, KC_ENT),
-                        COMBO(x_h, TRIPPLE_GRAVE),
-                        COMBO(h_slsh, KC_MINS),
-                        COMBO(h_comm, KC_LT),
-                        COMBO(h_dot, KC_GT),
-                        COMBO(slsh_comm, KC_EQL),
-                        COMBO(bspc_ac, KC_SCLN),
-                        COMBO(h_slsh_comm, DOT_SLASH_UPDIR),
-                        COMBO(comm_dot, KC_SCLN),
+// const uint16_t PROGMEM bspc_every[]    = {LT(U_NAV, KC_SPC), LGUI_T(KC_E), KC_V, COMBO_END};
+// const uint16_t PROGMEM bspc_you[]      = {LT(U_NAV, KC_SPC), KC_D, KC_U, COMBO_END};
+// const uint16_t PROGMEM bspc_and[]      = {LT(U_NAV, KC_SPC), KC_D, LCTL_T(KC_A), COMBO_END};
+// const uint16_t PROGMEM bspcf_for[]     = {LT(U_NAV, KC_SPC), KC_D, KC_F, COMBO_END};
+// const uint16_t PROGMEM bspch_here[]    = {LT(U_NUM, KC_BSPC), KC_H, COMBO_END};
+// const uint16_t PROGMEM bspct_the[]     = {LT(U_NUM, KC_BSPC), KC_H, LSFT_T(KC_T), COMBO_END};
+// const uint16_t PROGMEM bspcm_ment[]    = {LT(U_NUM, KC_BSPC), KC_M, COMBO_END};
+// const uint16_t PROGMEM bspcg_ing[]     = {KC_G, LSFT_T(KC_N), LALT_T(KC_I), COMBO_END};
+// const uint16_t PROGMEM bspco_ough[]    = {LT(U_NUM, KC_BSPC), KC_O, COMBO_END};
+const uint16_t PROGMEM bspci[]            = {LT(U_NUM, KC_BSPC), LCTL_T(KC_I), COMBO_END};
+// const uint16_t PROGMEM bspci_ion[]     = {LT(U_NUM, KC_BSPC), ALGR_T(KC_COMM), COMBO_END};
+// const uint16_t PROGMEM bspcta_that[]   = {LT(U_NUM, KC_BSPC), LSFT_T(KC_T), LCTL_T(KC_A), COMBO_END};
+// const uint16_t PROGMEM bspcq_qui[]     = {LT(U_NUM, KC_BSPC), LT(U_BUTTON, KC_Q), KC_H, COMBO_END};
+// const uint16_t PROGMEM bspci_key[]     = {LT(U_NUM, KC_BSPC), KC_H, KC_K, COMBO_END};
+// const uint16_t PROGMEM bspcts_this[]   = {LT(U_NUM, KC_BSPC), KC_H, LSFT_T(KC_T), LGUI_T(KC_S), COMBO_END};
+// const uint16_t PROGMEM bspcdn_dont[]   = {LT(U_NUM, KC_BSPC), KC_H, KC_D, COMBO_END};
+// const uint16_t PROGMEM bspcit_in_the[] = {LT(U_NUM, KC_BSPC), LALT_T(KC_I), LSFT_T(KC_T), COMBO_END};
+// const uint16_t PROGMEM hv_have[]       = {KC_H, KC_V, COMBO_END};
+// const uint16_t PROGMEM qk_qmk[]        = {LT(U_BUTTON, KC_Q), KC_K, COMBO_END};
+// const uint16_t PROGMEM kb_keyboard[]   = {KC_K, KC_B, COMBO_END};
+// const uint16_t PROGMEM wa_what[]       = {KC_W, LSFT_T(KC_T), LCTL_T(KC_A), COMBO_END};
+
+combo_t key_combos[] = {COMBO(l_d_w, SELWORD),
+                        COMBO(q_x, QK_LEAD),
+                        COMBO(q_x_m, AC_TOGG),
+                        COMBO(x_m_c, ALT_TAB),
+                        COMBO(x_m, KC_ESC),
+                        COMBO(r_t_s, KC_ENT),
+                        COMBO(k_p, TRIPPLE_GRAVE),
+                        COMBO(p_dot, KC_MINS),
+                        COMBO(p_mins, KC_LT),
+                        COMBO(p_slsh, KC_GT),
+                        COMBO(dot_mins, KC_EQL),
+                        // COMBO(bspc_ac, KC_SCLN),
+                        COMBO(p_dot_mins, DOT_SLASH_UPDIR),
+                        // COMBO(comm_dot, KC_SCLN),
                         COMBO(mouse_a, KC_ESC),
 
                         COMBO(bspc_ip, BSPCIP),
@@ -365,29 +386,32 @@ combo_t key_combos[] = {COMBO(l_y_p, SELWORD),
                         COMBO(bspc_ep, BSPCEP),
                         COMBO(bspc_ew, BSPCEW),
 
-                        COMBO(bspc_every, BSPCEV_EVERY),
-                        COMBO(bspc_you, BSPCU_YOU),
-                        COMBO(bspc_and, BSPCA_AND),
-                        COMBO(bspcf_for, BSPCF_FOR),
-                        COMBO(bspch_here, BSPCH_HERE),
-                        COMBO(bspct_the, BSPCT_THE),
-                        COMBO(bspcm_ment, BSPCM_MENT),
-                        COMBO(bspcg_ing, BSPCG_ING),
-                        COMBO(bspco_ough, BSPCO_OUGH),
-                        // COMBO(bspcol_ould, BSPCOL_OULD),
+                        COMBO(mc_comma, RSFT_T(KC_COMM)),
+                        COMBO(pdot_comma, RSFT_T(KC_COMM)),
+
+                        // COMBO(bspc_every, BSPCEV_EVERY),
+                        // COMBO(bspc_you, BSPCU_YOU),
+                        // COMBO(bspc_and, BSPCA_AND),
+                        // COMBO(bspcf_for, BSPCF_FOR),
+                        // COMBO(bspch_here, BSPCH_HERE),
+                        // COMBO(bspct_the, BSPCT_THE),
+                        // COMBO(bspcm_ment, BSPCM_MENT),
+                        // COMBO(bspcg_ing, BSPCG_ING),
+                        // COMBO(bspco_ough, BSPCO_OUGH),
+                        // // COMBO(bspcol_ould, BSPCOL_OULD),
                         COMBO(bspci, BSPCI),
-                        COMBO(bspci_ion, BSPCI_ION),
-                        // COMBO(bspcis_ions, BSPCIS_IONS),
-                        COMBO(bspcta_that, BSPCTA_THAT),
-                        COMBO(bspcq_qui, BSPCQ_QUI),
-                        COMBO(bspci_key, BSPCK_KEY),
-                        COMBO(bspcts_this, BSPCTS_THIS),
-                        COMBO(bspcdn_dont, BSPCDN_DONT),
-                        COMBO(bspcit_in_the, BSPCIT_IN_THE),
-                        COMBO(hv_have, HV_HAVE),
-                        COMBO(qk_qmk, QK_QMK),
-                        COMBO(kb_keyboard, KB_KEYBOARD),
-                        COMBO(wa_what, WA_WHAT),
+                        // COMBO(bspci_ion, BSPCI_ION),
+                        // // COMBO(bspcis_ions, BSPCIS_IONS),
+                        // COMBO(bspcta_that, BSPCTA_THAT),
+                        // COMBO(bspcq_qui, BSPCQ_QUI),
+                        // COMBO(bspci_key, BSPCK_KEY),
+                        // COMBO(bspcts_this, BSPCTS_THIS),
+                        // COMBO(bspcdn_dont, BSPCDN_DONT),
+                        // COMBO(bspcit_in_the, BSPCIT_IN_THE),
+                        // COMBO(hv_have, HV_HAVE),
+                        // COMBO(qk_qmk, QK_QMK),
+                        // COMBO(kb_keyboard, KB_KEYBOARD),
+                        // COMBO(wa_what, WA_WHAT),
 
                         COMBO(thumbcombos_base_right, LT(U_FUN, KC_DEL)),
                         COMBO(thumbcombos_base_left, LT(U_MEDIA, KC_ESC)),

@@ -28,8 +28,8 @@
 ) \
 LAYOUT_voyager( \
 KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5,      KC_6, KC_7, KC_8, KC_9, KC_0, TD(QK_REBOOT), \
-KC_TAB, K00, K01, K02, K03, K04,      K05, K06, K07, K08, K09, KC_BSPC, \
-LSFT_T(KC_ESC), K10, K11, K12, K13, K14,      K15, K16, K17, K18, K19, RSFT_T(KC_ENT), \
+KC_TAB, K00, K01, K02, K03, K04,      K05, K06, K07, K08, K09, KC_SCLN, \
+LSFT_T(KC_ESC), K10, K11, K12, K13, K14,      K15, K16, K17, K18, K19, RSFT_T(KC_COMM), \
 KC_LEFT_GUI, K20, K21, K22, K23, K24,      K25, K26, K27, K28, K29, KC_RIGHT_CTRL, \
                     K33, K34,      K35, K36 \
 )
@@ -41,6 +41,12 @@ U_NA,              KC_ALGR,           TD(U_TD_U_SYM),    TD(U_TD_U_MOUSE),  U_NA
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_BTN2,           KC_BTN1,           KC_BTN3,           U_NP,              U_NP
 
 #define MIRYOKU_LAYER_BASE \
+KC_B,              KC_L,              KC_D,              KC_W,              KC_Z,              KC_QUOT,           KC_F,              KC_O,              KC_U,              KC_J, \
+LCTL_T(KC_N),      LALT_T(KC_R),      LGUI_T(KC_T),      LSFT_T(KC_S),      KC_G,              KC_Y,              LSFT_T(KC_H),      LGUI_T(KC_A),      LALT_T(KC_E),      LCTL_T(KC_I),      \
+LT(U_BUTTON,KC_Q), ALGR_T(KC_X),      KC_M,              KC_C,              KC_V,              KC_K,              KC_P,              KC_DOT,            ALGR_T(KC_MINS),   LT(U_BUTTON,KC_SLSH),\
+U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_SPC),  LT(U_MOUSE,KC_TAB),LT(U_SYM,KC_ENT),  LT(U_NUM,KC_BSPC), LT(U_FUN,KC_DEL),  U_NP,              U_NP
+
+#define MIRYOKU_LAYER_EXTRA \
 KC_W,              KC_L,              KC_Y,              KC_P,              KC_B,              KC_Z,              KC_F,              KC_O,              KC_U,              KC_QUOT,           \
 LCTL_T(KC_C),      LALT_T(KC_R),      LGUI_T(KC_S),      LSFT_T(KC_T),      KC_G,              KC_M,              LSFT_T(KC_N),      LGUI_T(KC_E),      LALT_T(KC_I),      LCTL_T(KC_A),      \
 LT(U_BUTTON,KC_Q), ALGR_T(KC_J),      KC_V,              KC_D,              KC_K,              KC_X,              KC_H,              KC_SLSH,           ALGR_T(KC_COMM),   LT(U_BUTTON,KC_DOT),\
